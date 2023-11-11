@@ -73,6 +73,7 @@ function sssp(source, dest, adjacency) {
 		if (visited.has(dest)) {
 			break;
 		}
+		console.log('unvisited:', unvisited);
 		current = pop_smallest(unvisited, distances);
 	}
 
