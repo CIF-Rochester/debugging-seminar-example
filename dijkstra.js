@@ -27,6 +27,7 @@ function build_adjacency(graph) {
 }
 
 function pop_smallest(queue, weights) {
+	console.log('queue:', queue, '\tweights:', weights);
 	let smallest_weight = Infinity;
 	let smallest_i = undefined;
 	for (let i = 0; i < queue.length; i++) {
