@@ -55,7 +55,9 @@ function sssp(source, dest, adjacency) {
 	let backpath = {};
 
 	let current = source;
+	console.log(adjacency); // for checking that each elem of adjacency is iterable
 	while (unvisited.length > 0) {
+		console.log(current); // for checking that current gets set to something weird
 		let neighbors = adjacency[current];
 		for (const conn of neighbors) {
 			if (!visited.has(conn.m)) {
