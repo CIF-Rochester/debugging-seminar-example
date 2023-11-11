@@ -54,9 +54,9 @@ function sssp(source, dest, adjacency) {
 
 	let backpath = {};
 
-	let current = source;
 	console.log(adjacency); // for checking that each elem of adjacency is iterable
 	while (unvisited.length > 0) {
+		let current = pop_smallest(unvisited, distances);
 		console.log(current); // for checking that current gets set to something weird
 		let neighbors = adjacency[current];
 		for (const conn of neighbors) {
@@ -73,8 +73,6 @@ function sssp(source, dest, adjacency) {
 		if (visited.has(dest)) {
 			break;
 		}
-		console.log('unvisited:', unvisited);
-		current = pop_smallest(unvisited, distances);
 	}
 
 	if (distances[dest] == Infinity) {
