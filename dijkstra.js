@@ -65,7 +65,7 @@ function sssp(source, dest, adjacency) {
 		for (const conn of neighbors) {
 			if (!visited.has(conn.m)) {
 				let d = distances[current] + conn.w;
-				if (d > distances[conn.m]) {
+				if (d < distances[conn.m]) {
 					distances[conn.m] = d;
 					backpath[conn.m] = current;
 				}
